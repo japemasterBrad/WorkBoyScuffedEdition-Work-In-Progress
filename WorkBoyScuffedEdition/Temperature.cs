@@ -6,7 +6,7 @@ namespace WorkBoyScuffedEdition
 {
     public class Temperature
     {
-        public int tempCelcius;
+        public int tempCelcius { get; set; }
 
         public void ConvertCtoF(int tempCelcius)
         {
