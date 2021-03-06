@@ -4,11 +4,13 @@ namespace WorkBoyScuffedEdition
 {
     class Program
     {
-        public static Temperature temp = ;
 
         static void Main(string[] args)
         {
-            temp.ConvertTemp(30);
+            Temperature temperature = new Temperature();
+            temperature.tempCelcius = 24;
+
+            Console.WriteLine(temperature);
         }
     }
 }
