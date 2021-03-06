@@ -4,9 +4,10 @@ namespace WorkBoyScuffedEdition
 {
     class Program
     {
+        public static Temperature temp;
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            
         }
     }
 }
