@@ -4,13 +4,16 @@ namespace WorkBoyScuffedEdition
 {
     class Program
     {
+        Temperature temperature = new Temperature();
 
         static void Main(string[] args)
         {
-            Temperature temperature = new Temperature();
-            temperature.tempCelcius = 24;
+            Console.WriteLine("What do you want to convert from C to F?");
+            int CelciusReading = Console.Read();
 
-            Console.WriteLine(temperature);
+            Console.WriteLine(CelciusReading);
+            
+            //temperature.ConvertCtoF(CelciusReading);
         }
     }
 }
