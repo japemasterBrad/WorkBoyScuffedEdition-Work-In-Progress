@@ -4,15 +4,19 @@ namespace WorkBoyScuffedEdition
 {
     class Program
     {
-        public static Temperature temperature = new Temperature();
+        public static Temperatures temperature = new Temperatures();
+        public static Distances dist = new Distances();
+
         public static bool running = true;
         public static string workboyFunctionSelector;
         public static string workboyRunAgain;
 
-        public static string temperaturerunAgain;
+        public static string temperatureRunAgain;
+        public static string volumesRunAgain;
 
         static void Main(string[] args)
         {
+            OpeningArt();
             FunctionSelector();
         }
 
@@ -21,7 +25,9 @@ namespace WorkBoyScuffedEdition
         public static void FunctionSelector()
         {
             Console.WriteLine("What do you want to do?\n" +
-                "1) Tempertaure");
+                "1) Tempertaure\n" +
+                "2) Distances\n");
+
             workboyFunctionSelector = Console.ReadLine();
 
             do
@@ -29,6 +35,10 @@ namespace WorkBoyScuffedEdition
                 if (workboyFunctionSelector.Equals("1"))
                 {
                     TemperatureConverter();
+                }
+                else if (workboyFunctionSelector.Equals("2"))
+                {
+                    DistanceConvertor();
                 }
 
                 RunAgain();
@@ -91,17 +101,67 @@ namespace WorkBoyScuffedEdition
                 void RunTempAgain()
                 {
                     Console.WriteLine("Convert another temperature? (Y/N)");
-                    temperaturerunAgain = Console.ReadLine();
+                    temperatureRunAgain = Console.ReadLine();
 
-                    if (temperaturerunAgain.Equals("n"))
+                    if (temperatureRunAgain.Equals("n"))
                     {
                         Console.WriteLine("\n\n\n");
                         FunctionSelector();
                     }
                 }
 
-            } while (temperaturerunAgain.Equals(true));
+            } while (temperatureRunAgain.Equals(true));
         }
+        #endregion
+
+        #region Volumes
+        
+        public static void DistanceConvertor()
+        {
+            do
+            {
+                Console.WriteLine("What distances would you like to convert?");
+                string distancePicker = Console.ReadLine();
+
+                if (distancePicker.Equals("1")){
+                    Console.WriteLine("How many inches would you like to convert to CM?");
+                    float inchesToConvert = Console.Read();
+                    Console.WriteLine("inches to convert: {0}", inchesToConvert);
+                    dist.InchToCM(inchesToConvert);
+                }
+
+
+
+                
+            } while (volumesRunAgain.Equals(true));
+        }
+
+        public static void VolumeConvertor()
+        {
+            
+        }
+        #endregion
+
+
+
+
+
+        #region OPENING ART
+        public static void OpeningArt()
+        {
+            Console.WriteLine("**********************************************************");
+            Console.WriteLine("WORK BOY *SCUFFED EDITION*");
+            Console.WriteLine("**********************************************************");
+        }
+
+        /*
+         
+         
+         
+         
+         
+         */
+
         #endregion
     }
 }

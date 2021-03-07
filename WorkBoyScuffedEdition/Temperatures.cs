@@ -4,7 +4,7 @@ using System.Text;
 
 namespace WorkBoyScuffedEdition
 {
-    public class Temperature
+    public class Temperatures
     {
         public float tempCelcius;
         public float tempFarenheit;
