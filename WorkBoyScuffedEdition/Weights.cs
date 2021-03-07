@@ -36,7 +36,22 @@ namespace WorkBoyScuffedEdition
 
             Console.WriteLine("{0} Tonne converts to {1} Ton",
                 inputTonne, TonneConverted);
+        }
 
+        public void OzToGram(float inputOz)
+        {
+            float convertedOz = inputOz * 28.35f;
+
+            Console.WriteLine("{0}oz converts to {1}g",
+                inputOz, convertedOz);
+        }
+
+        public void GramToOz(float inputGram)
+        {
+            float convertedGram = inputGram / 28.35f;
+
+            Console.WriteLine("{0}g converts to {1}oz",
+                inputGram, convertedGram);
         }
     }
 }

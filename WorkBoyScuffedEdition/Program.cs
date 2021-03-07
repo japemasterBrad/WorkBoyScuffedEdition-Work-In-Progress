@@ -238,7 +238,9 @@ namespace WorkBoyScuffedEdition
                     "1) Lbs to Kilograms\n" +
                     "2) Kg to Lbs\n" +
                     "3) US Ton to Tonne\n" +
-                    "4) Tonne to US Ton\n");
+                    "4) Tonne to US Ton\n" +
+                    "5) Oz to Gram\n" +
+                    "6) Gram to Oz\n");
                 string weightPicker = Console.ReadLine();
                 
                 if (weightPicker.Equals("1"))
@@ -270,13 +272,31 @@ namespace WorkBoyScuffedEdition
                 }
                 else if (weightPicker.Equals("4"))
                 {
-                    Console.WriteLine("HOw many Tonne would you like to convert to US Ton?");
+                    Console.WriteLine("How many Tonne would you like to convert to US Ton?");
 
                     string TonneToTon = Console.ReadLine();
 
                     float ParsedTonneReading = float.Parse(TonneToTon);
                     Console.WriteLine("parsed tonne reading: {0}", ParsedTonneReading);
                     weight.TonToTonne(ParsedTonneReading);
+                }
+                else if (weightPicker.Equals("5"))
+                {
+                    Console.WriteLine("How many Ounce would you like to convert to Grams?");
+
+                    string OzToGrams = Console.ReadLine();
+
+                    float ParsedOzReading = float.Parse(OzToGrams);
+                    weight.OzToGram(ParsedOzReading);
+                }
+                else if (weightPicker.Equals("6"))
+                {
+                    Console.WriteLine("How many Grams would you like to convert to Ounce?");
+
+                    string GramsToOz = Console.ReadLine();
+
+                    float ParsedGramReading = float.Parse(GramsToOz);
+                    weight.GramToOz(ParsedGramReading);
                 }
                 ConvertorRunAgain();
             } while (weightsRunAgain.Equals(true));
