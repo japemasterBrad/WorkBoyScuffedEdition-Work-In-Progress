@@ -6,12 +6,8 @@ namespace WorkBoyScuffedEdition
 {
     class Distances
     {
-
-        #region CM and Inch
         public void InchToCM(float inputInches)
         {
-            // multiply inch by 2.54
-
             float inchConvertor = inputInches * 2.54f;
 
             if (inputInches == 1)
@@ -41,9 +37,7 @@ namespace WorkBoyScuffedEdition
                     inputCM, cmConvertor);
             }
         }
-        #endregion
 
-        #region km and miles
         public void KMtoMiles(float inputKM)
         {
             float kmConvertor = inputKM / 1.609f;
@@ -80,7 +74,6 @@ namespace WorkBoyScuffedEdition
 
             Console.WriteLine("\n");
         }
-            #endregion
 
         public void FeetToMeter(float inputFeet)
         {

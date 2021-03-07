@@ -199,7 +199,7 @@ namespace WorkBoyScuffedEdition
                 else if (distancePicker.Equals("4"))
                 {
                     Console.WriteLine("How many miles would you like to conver to kilometers?");
-                    string milesToKM= Console.ReadLine();
+                    string milesToKM = Console.ReadLine();
 
                     float parsedMolesConvertor = float.Parse(milesToKM);
 
@@ -217,7 +217,7 @@ namespace WorkBoyScuffedEdition
                 else if (distancePicker.Equals("6"))
                 {
                     Console.WriteLine("How many Meters would you like to conver to Feet?");
-                    string MeterToFeet= Console.ReadLine();
+                    string MeterToFeet = Console.ReadLine();
 
                     float parsedMeterConvertor = float.Parse(MeterToFeet);
 
@@ -242,7 +242,7 @@ namespace WorkBoyScuffedEdition
                     "5) Oz to Gram\n" +
                     "6) Gram to Oz\n");
                 string weightPicker = Console.ReadLine();
-                
+
                 if (weightPicker.Equals("1"))
                 {
                     Console.WriteLine("How many Lbs would you like to convert to kg?");
@@ -256,7 +256,7 @@ namespace WorkBoyScuffedEdition
                 {
                     Console.WriteLine("How many kg would you like to convert to lbs?");
 
-                    string kgToLbs= Console.ReadLine();
+                    string kgToLbs = Console.ReadLine();
 
                     float ParsedKgReading = float.Parse(kgToLbs);
                     weight.KgToLbs(ParsedKgReading);
@@ -309,18 +309,51 @@ namespace WorkBoyScuffedEdition
                 currentConvertorType = "weight";
 
                 Console.WriteLine("What volumes would you like to convert?\n" +
-                    "1) US Gallon to Liter\n");
+                    "1) US Gallon to Liter\n" +
+                    "2) Liter to US Gallon\n" +
+                    "3) Quarts to Liters\n" +
+                    "4) Liters to Quarts\n");
+
                 string volumePicker = Console.ReadLine();
 
                 if (volumePicker.Equals("1"))
                 {
                     Console.WriteLine("How many US Gallons would you like to convert to Liters?");
 
-                    string USGalToL= Console.ReadLine();
+                    string USGalToL = Console.ReadLine();
 
                     float ParsedUSGalReading = float.Parse(USGalToL);
                     vol.USGalToLiter(ParsedUSGalReading);
                 }
+                else if (volumePicker.Equals("2"))
+                {
+                    Console.WriteLine("How many liters would you like to convert to US Gallons?");
+
+                    string LtoUSGAL = Console.ReadLine();
+
+                    float ParsedLReading = float.Parse(LtoUSGAL);
+                    vol.LiterToUSGal(ParsedLReading);
+                }
+                else if (volumePicker.Equals("3"))
+                {
+                    Console.WriteLine("How many Quarts would you like to convert to Liters?");
+
+                    string QuartsToLiter = Console.ReadLine();
+
+                    float ParsedQuartsReading = float.Parse(QuartsToLiter);
+                    vol.QuartToLiter(ParsedQuartsReading);
+                }
+                else if (volumePicker.Equals("4"))
+                {
+                    Console.WriteLine("How many liters would you like to convert to US Gallons?");
+
+                    string LiterToQuarts = Console.ReadLine();
+
+                    float ParsedLReading2 = float.Parse(LiterToQuarts);
+                    vol.LiterToQuart(ParsedLReading2);
+                }
+
+                ConvertorRunAgain();
 
             } while (VolumeRunAgain.Equals(true));
 
