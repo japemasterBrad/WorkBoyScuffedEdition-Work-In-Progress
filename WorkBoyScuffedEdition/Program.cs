@@ -6,6 +6,7 @@ namespace WorkBoyScuffedEdition
     {
         public static Temperatures temperature = new Temperatures();
         public static Distances dist = new Distances();
+        public static Weights weight = new Weights();
         public static Convertor convert = new Convertor();
 
         public static string currentConvertorType;
@@ -13,12 +14,16 @@ namespace WorkBoyScuffedEdition
         public static bool running = true;
         public static string workboyFunctionSelector;
         public static string workboyRunAgain;
+        public static string distancePicker;
 
         public static string temperatureRunAgainInput;
         public static bool temperatureRunAgain = false;
 
         public static string distancesRunAgainInput;
         public static bool distancesRunAgain = false;
+
+        public static string weightsRunAgainInput;
+        public static bool weightsRunAgain;
 
         static void Main(string[] args)
         {
@@ -29,9 +34,13 @@ namespace WorkBoyScuffedEdition
         {
             OpeningArt();
 
-            Console.WriteLine("What do you want to do?\n" +
-                "1) Convert\n" +
-                "");
+            Console.WriteLine("|--------------------------|\n" +
+                              "|  What do you want to do? |\n" +
+                              "|--------------------------|\n" +
+                              "|1) Convert                |\n" +
+                              "|--------------------------|\n" +
+                              "|2) (COMING SOON)          |\n" +
+                              "|--------------------------|\n");
 
             workboyFunctionSelector = Console.ReadLine();
             Console.Clear();
@@ -65,7 +74,7 @@ namespace WorkBoyScuffedEdition
             }
             else if (convertPicker.Equals("3"))
             {
-
+                WeightConvertor();
             }
             else if (convertPicker.Equals("4"))
             {
@@ -147,9 +156,11 @@ namespace WorkBoyScuffedEdition
                     "1) Inches to CM\n" +
                     "2) CM to Inches\n" +
                     "3) KM to Miles\n" +
-                    "4) Miles to KM\n");
+                    "4) Miles to KM\n" +
+                    "5) Ft to Meter\n" +
+                    "6) Meter to Ft\n");
 
-                string distancePicker = Console.ReadLine();
+                distancePicker = Console.ReadLine();
 
                 if (distancePicker.Equals("1"))
                 {
@@ -159,11 +170,8 @@ namespace WorkBoyScuffedEdition
 
                     float ParsedInchesReading = float.Parse(inchesToConvert);
 
-
-
                     Console.WriteLine("inches to convert: {0}", inchesToConvert);
                     dist.InchToCM(ParsedInchesReading);
-                    Console.ReadKey();
                 }
                 else if (distancePicker.Equals("2"))
                 {
@@ -194,15 +202,81 @@ namespace WorkBoyScuffedEdition
 
                     dist.MilesToKM(parsedMolesConvertor);
                 }
+                else if (distancePicker.Equals("5"))
+                {
+                    Console.WriteLine("How many Feet would you like to conver to Meters?");
+                    string ftToMeter = Console.ReadLine();
 
+                    float parsedFeetConvertor = float.Parse(ftToMeter);
+
+                    dist.FeetToMeter(parsedFeetConvertor);
+                }
+                else if (distancePicker.Equals("6"))
+                {
+                    Console.WriteLine("How many Meters would you like to conver to Feet?");
+                    string MeterToFeet= Console.ReadLine();
+
+                    float parsedMeterConvertor = float.Parse(MeterToFeet);
+
+                    dist.FeetToMeter(parsedMeterConvertor);
+                }
                 ConvertorRunAgain();
 
             } while (distancesRunAgain.Equals(true));
         }
 
-        public static void VolumeConvertor()
+        public static void WeightConvertor()
         {
+            do
+            {
+                currentConvertorType = "weight";
 
+                Console.WriteLine("What weights would you like to convert?\n" +
+                    "1) Lbs to Kilograms\n" +
+                    "2) Kg to Lbs\n" +
+                    "3) US Ton to Tonne\n" +
+                    "4) Tonne to US Ton\n");
+                string weightPicker = Console.ReadLine();
+                
+                if (weightPicker.Equals("1"))
+                {
+                    Console.WriteLine("How many Lbs would you like to convert to kg?");
+
+                    string lbsToKg = Console.ReadLine();
+
+                    float ParsedLbsReading = float.Parse(lbsToKg);
+                    weight.LbsToKg(ParsedLbsReading);
+                }
+                else if (weightPicker.Equals("2"))
+                {
+                    Console.WriteLine("How many kg would you like to convert to lbs?");
+
+                    string kgToLbs= Console.ReadLine();
+
+                    float ParsedKgReading = float.Parse(kgToLbs);
+                    weight.KgToLbs(ParsedKgReading);
+                }
+                else if (weightPicker.Equals("3"))
+                {
+                    Console.WriteLine("How many US Ton would you like to convert to Tonnes?");
+
+                    string TonToTonne = Console.ReadLine();
+
+                    float ParsedTonReading = float.Parse(TonToTonne);
+                    weight.TonToTonne(ParsedTonReading);
+                }
+                else if (weightPicker.Equals("4"))
+                {
+                    Console.WriteLine("HOw many Tonne would you like to convert to US Ton?");
+
+                    string TonneToTon = Console.ReadLine();
+
+                    float ParsedTonneReading = float.Parse(TonneToTon);
+                    Console.WriteLine("parsed tonne reading: {0}", ParsedTonneReading);
+                    weight.TonToTonne(ParsedTonneReading);
+                }
+                ConvertorRunAgain();
+            } while (weightsRunAgain.Equals(true));
         }
 
         public static void OpeningArt()

@@ -79,7 +79,23 @@ namespace WorkBoyScuffedEdition
             }
 
             Console.WriteLine("\n");
+        }
             #endregion
+
+        public void FeetToMeter(float inputFeet)
+        {
+            float feetConvertor = inputFeet / 3.281f;
+
+            Console.WriteLine("{0} ft converts to {1}m",
+                inputFeet, feetConvertor);
+        }
+
+        public void MeterToFeet(float inputMeter)
+        {
+            float meterConvertor = inputMeter * 3.281f;
+
+            Console.WriteLine("{0}m converts to {1} ft", 
+                inputMeter, meterConvertor);
         }
     }
 }
