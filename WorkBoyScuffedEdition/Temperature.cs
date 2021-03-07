@@ -11,9 +11,9 @@ namespace WorkBoyScuffedEdition
 
         public void ConvertCtoF(float tempCelcius)
         {
-            float ConvertedTempFarenheit = tempCelcius * 9 / 5 + 32;
+            float ConvertedCtoF = tempCelcius * 9 / 5 + 32;
 
-            Console.WriteLine("{0}F is equal to {1}C", tempCelcius, tempFarenheit);
+            Console.WriteLine("{0}F is equal to {1}C", tempCelcius, ConvertedCtoF);
             Console.ReadKey();
         }
 

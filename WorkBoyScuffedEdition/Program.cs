@@ -9,6 +9,8 @@ namespace WorkBoyScuffedEdition
         public static string workboyFunctionSelector;
         public static string workboyRunAgain;
 
+        public static string temperaturerunAgain;
+
         static void Main(string[] args)
         {
             FunctionSelector();
@@ -70,7 +72,9 @@ namespace WorkBoyScuffedEdition
                     Console.WriteLine("What Celcius temperature do you want to convert to Farenheit?");
                     string celciusReading = Console.ReadLine();
 
-                    float ParsedCelciusReading = Convert.ToInt32(celciusReading);
+                    //float ParsedCelciusReading = Convert.ToInt32(celciusReading);
+
+                    float ParsedCelciusReading = float.Parse(celciusReading);
 
                     temperature.ConvertCtoF(ParsedCelciusReading);
                 }
@@ -79,15 +83,30 @@ namespace WorkBoyScuffedEdition
                     Console.WriteLine("What Farenheit temperature do you want to convert to Celcius?");
                     string farenheitReading = Console.ReadLine();
 
-                    int ParsedFarenheitReading = Convert.ToInt32(farenheitReading);
+                    //float ParsedFarenheitReading = Convert.ToInt32(farenheitReading);
+
+                    float ParsedFarenheitReading = float.Parse(farenheitReading);
 
                     temperature.ConvertFtoC(ParsedFarenheitReading);
                 }
 
-                Console.WriteLine("Convert another temperature? (Y/N)");
-                string runAgain = Console.ReadLine();
+                RunTempAgain();
 
-            } while (temperatureRunning = true);
+                void RunTempAgain()
+                {
+                    Console.WriteLine("Convert another temperature? (Y/N)");
+                    temperaturerunAgain = Console.ReadLine();
+
+
+                    if (temperaturerunAgain.Equals("n"))
+                    {
+                        Console.WriteLine("\n\n\n");
+                        FunctionSelector();
+                    }
+                }
+
+
+            } while (temperaturerunAgain.Equals(true));
         }
     }
 }
