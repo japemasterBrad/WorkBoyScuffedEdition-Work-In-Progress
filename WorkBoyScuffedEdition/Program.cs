@@ -32,6 +32,12 @@ namespace WorkBoyScuffedEdition
         {
             FunctionSelector();
         }
+        
+        public static void Author()
+        {
+            Console.WriteLine("\n\n\n\n\n\n\n\n\n(c) 2021 Bradley Stuart Thomas\n" +
+                              "Original Concept by Fabtek, Inc");
+        }
 
         public static void FunctionSelector()
         {
@@ -43,8 +49,9 @@ namespace WorkBoyScuffedEdition
                               "|1) Convert                |\n" +
                               "|--------------------------|\n" +
                               "|2) (COMING SOON)          |\n" +
-                              "|--------------------------|\n");
-
+                              "|--------------------------|\n" +
+                              "\n\n\nPress Enter to Close");
+            Author();
             workboyFunctionSelector = Console.ReadLine();
             Console.Clear();
 
