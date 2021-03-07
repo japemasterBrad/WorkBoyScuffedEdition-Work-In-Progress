@@ -6,6 +6,7 @@ namespace WorkBoyScuffedEdition
     {
         public static Temperatures temperature = new Temperatures();
         public static Distances dist = new Distances();
+        public static Convertor convert = new Convertor();
 
         public static bool running = true;
         public static string workboyFunctionSelector;
@@ -24,15 +25,31 @@ namespace WorkBoyScuffedEdition
 
         public static void FunctionSelector()
         {
+            //Console.WriteLine("What do you want to do?\n" +
+            //    "1) Tempertaure\n" +
+            //    "2) Distances\n");
+
             Console.WriteLine("What do you want to do?\n" +
-                "1) Tempertaure\n" +
-                "2) Distances\n");
+                "1) Convert\n" +
+                "");
 
             workboyFunctionSelector = Console.ReadLine();
+            Console.Clear();
 
-            do
+            if (workboyFunctionSelector.Equals("1"))
             {
-                if (workboyFunctionSelector.Equals("1"))
+                Console.WriteLine("What do you want to conver?\n" +
+                    "1) Tempertaure\n" +
+                    "2) Distance\n" +
+                    "3) Weight\n" +
+                    "4) Volumes\n" +
+                    "5) Timezones (Coming soon)\n");
+
+                string convertPicker = Console.ReadLine();
+
+                Console.Clear();
+
+                if (convertPicker.Equals("1"))
                 {
                     TemperatureConverter();
                 }
@@ -40,14 +57,19 @@ namespace WorkBoyScuffedEdition
                 {
                     DistanceConvertor();
                 }
+                else if (workboyFunctionSelector.Equals("3"))
+                {
 
-                RunAgain();
+                }
+                else if (workboyFunctionSelector.Equals("4"))
+                {
 
-            } while (running);
+                }
+                else if (workboyFunctionSelector.Equals("5"))
+                {
 
-            if (workboyFunctionSelector.Equals("1"))
-            {
-                TemperatureConverter();
+                }
+                    
             }
         }
 
@@ -65,7 +87,6 @@ namespace WorkBoyScuffedEdition
         }
         #endregion
 
-        #region TEMPERATURE CONVERT
         public static void TemperatureConverter()
         {
             do
@@ -112,18 +133,21 @@ namespace WorkBoyScuffedEdition
 
             } while (temperatureRunAgain.Equals(true));
         }
-        #endregion
 
         #region Volumes
-        
+
         public static void DistanceConvertor()
         {
             do
             {
-                Console.WriteLine("What distances would you like to convert?");
+                Console.WriteLine("What distances would you like to convert?\n" +
+                    "1) Inches to CM\n" +
+                    "2) CM to Inches\n" +
+                    "");
                 string distancePicker = Console.ReadLine();
 
-                if (distancePicker.Equals("1")){
+                if (distancePicker.Equals("1"))
+                {
                     Console.WriteLine("How many inches would you like to convert to CM?");
                     float inchesToConvert = Console.Read();
                     Console.WriteLine("inches to convert: {0}", inchesToConvert);
@@ -132,13 +156,13 @@ namespace WorkBoyScuffedEdition
 
 
 
-                
+
             } while (volumesRunAgain.Equals(true));
         }
 
         public static void VolumeConvertor()
         {
-            
+
         }
         #endregion
 

@@ -6,8 +6,8 @@ namespace WorkBoyScuffedEdition
 {
     class Distances
     {
-        public double Inches;
-        public double CM;
+        public double inches;
+        public double cm;
 
         public void InchToCM(double inputInches)
         {
