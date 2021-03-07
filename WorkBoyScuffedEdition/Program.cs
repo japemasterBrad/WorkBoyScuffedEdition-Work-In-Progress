@@ -7,7 +7,7 @@ namespace WorkBoyScuffedEdition
         public static Temperatures temperature = new Temperatures();
         public static Distances dist = new Distances();
         public static Weights weight = new Weights();
-        public static Convertor convert = new Convertor();
+        public static Volumes vol = new Volumes();
 
         public static string currentConvertorType;
 
@@ -24,6 +24,9 @@ namespace WorkBoyScuffedEdition
 
         public static string weightsRunAgainInput;
         public static bool weightsRunAgain;
+
+        public static string VolumeRunAgainInput;
+        public static bool VolumeRunAgain;
 
         static void Main(string[] args)
         {
@@ -78,7 +81,7 @@ namespace WorkBoyScuffedEdition
             }
             else if (convertPicker.Equals("4"))
             {
-
+                VolumeConvertor();
             }
             else if (convertPicker.Equals("5"))
             {
@@ -279,6 +282,29 @@ namespace WorkBoyScuffedEdition
             } while (weightsRunAgain.Equals(true));
         }
 
+        public static void VolumeConvertor()
+        {
+            do
+            {
+                currentConvertorType = "weight";
+
+                Console.WriteLine("What volumes would you like to convert?\n" +
+                    "1) US Gallon to Liter\n");
+                string volumePicker = Console.ReadLine();
+
+                if (volumePicker.Equals("1"))
+                {
+                    Console.WriteLine("How many US Gallons would you like to convert to Liters?");
+
+                    string USGalToL= Console.ReadLine();
+
+                    float ParsedUSGalReading = float.Parse(USGalToL);
+                    vol.USGalToLiter(ParsedUSGalReading);
+                }
+
+            } while (VolumeRunAgain.Equals(true));
+
+        }
         public static void OpeningArt()
         {
             Console.WriteLine("     ╔═╗     ╔═╗   ╔═══════╗  ╔═══════╗   ╔═╗  ╔══╗  ╔═══════╗  ╔═══════╗   ╔═╗ ╔═╗\n" +
