@@ -43,7 +43,7 @@ namespace WorkBoyScuffedEdition
 
         #endregion
 
-        #region RunAgain
+        #region RunAgain (MAYBE CAN LOSE, OR REFACTOR INTO WHOLE PROGRAM OR OTHERWISE)
 
         public static void RunAgain()
         {
@@ -55,9 +55,9 @@ namespace WorkBoyScuffedEdition
         }
         #endregion
 
+        #region TEMPERATURE CONVERT
         public static void TemperatureConverter()
         {
-            bool temperatureRunning = true;
             do
             {
                 Console.WriteLine("Do you want to convert from Celcius to Farenheit," +
@@ -72,8 +72,6 @@ namespace WorkBoyScuffedEdition
                     Console.WriteLine("What Celcius temperature do you want to convert to Farenheit?");
                     string celciusReading = Console.ReadLine();
 
-                    //float ParsedCelciusReading = Convert.ToInt32(celciusReading);
-
                     float ParsedCelciusReading = float.Parse(celciusReading);
 
                     temperature.ConvertCtoF(ParsedCelciusReading);
@@ -82,8 +80,6 @@ namespace WorkBoyScuffedEdition
                 {
                     Console.WriteLine("What Farenheit temperature do you want to convert to Celcius?");
                     string farenheitReading = Console.ReadLine();
-
-                    //float ParsedFarenheitReading = Convert.ToInt32(farenheitReading);
 
                     float ParsedFarenheitReading = float.Parse(farenheitReading);
 
@@ -97,7 +93,6 @@ namespace WorkBoyScuffedEdition
                     Console.WriteLine("Convert another temperature? (Y/N)");
                     temperaturerunAgain = Console.ReadLine();
 
-
                     if (temperaturerunAgain.Equals("n"))
                     {
                         Console.WriteLine("\n\n\n");
@@ -105,8 +100,8 @@ namespace WorkBoyScuffedEdition
                     }
                 }
 
-
             } while (temperaturerunAgain.Equals(true));
         }
+        #endregion
     }
 }
