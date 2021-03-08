@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace WorkBoyScuffedEdition
 {
@@ -76,7 +77,7 @@ namespace WorkBoyScuffedEdition
                               "|--------------------------|\n" +
                               "|1) Convert                |\n" +
                               "|--------------------------|\n" +
-                              "|2) TBC                    |\n" +
+                              "|2) Phonebook              |\n" +
                               "|--------------------------|\n" +
                               "|3) (COMING SOON)          |\n" +
                               "| -------------------------|\n" +
@@ -97,7 +98,7 @@ namespace WorkBoyScuffedEdition
             }
             else if (workboyFunctionSelector.Equals("2"))
             {
-                FunctionSelector();
+                PhoneBook();
             }
             else if (workboyFunctionSelector.Equals("3"))
             {
@@ -435,7 +436,40 @@ namespace WorkBoyScuffedEdition
         }
         #endregion
         
-        
+        public static void PhoneBook()
+        {
+            Console.WriteLine("What do you want to do?\n" +
+                              "1) Access Phone Book\n" +
+                              "2) Add to Phone Book\n\n");
+            
+            int phoneBookNavigator = Console.Read();
+
+            if (phoneBookNavigator == 1)
+            {
+                
+            } 
+            else if (phoneBookNavigator == 2)
+            {
+                
+            }
+            
+            static void AccessPhonebook()
+            {
+                
+            }
+            static void AddToPhonebook()
+            {
+                Console.WriteLine("Input name you'd like to add");
+                string addNameToPhoneBook = Console.ReadLine();
+
+                Console.WriteLine("Input phone number you'd like to add for this contact");
+                int addNumberToPhonebook = Console.Read();
+
+            }
+            
+        }
+
+
         public static void OpeningArt()
         {
             Console.WriteLine("     ╔═╗     ╔═╗   ╔═══════╗  ╔═══════╗   ╔═╗  ╔══╗  ╔═══════╗  ╔═══════╗   ╔═╗ ╔═╗\n" +
@@ -445,8 +479,6 @@ namespace WorkBoyScuffedEdition
                               " ║ ╚═╝  ╚═╝ ║  ║ ╚═══╝ ║  ║ ║  ║   ║  ║ ║  ╚╗ ║  ║  ║  ║ ║  ║ ╚═══╝ ║     ║  ║     \n" +
                               "╚══════════╝  ╚═══════╝  ╚═╝  ╚═══╝  ╚═╝   ╚═╝  ╚═══════╝  ╚═══════╝    ╚═══╝  \n" +
                               "                                                          *SCUFFED EDITION*");
-
-
         }
     }
 }
