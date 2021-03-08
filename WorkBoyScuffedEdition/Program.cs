@@ -9,6 +9,7 @@ namespace WorkBoyScuffedEdition
         public static Distances dist = new Distances();
         public static Weights weight = new Weights();
         public static Volumes vol = new Volumes();
+        public static Phonebook pb;
 
         public static string returnToHome;
 
@@ -444,29 +445,17 @@ namespace WorkBoyScuffedEdition
             
             int phoneBookNavigator = Console.Read();
 
-            if (phoneBookNavigator == 1)
+            if (phoneBookNavigator == 2)
             {
-                
-            } 
-            else if (phoneBookNavigator == 2)
-            {
-                
-            }
-            
-            static void AccessPhonebook()
-            {
-                
-            }
-            static void AddToPhonebook()
-            {
-                Console.WriteLine("Input name you'd like to add");
-                string addNameToPhoneBook = Console.ReadLine();
+                Console.WriteLine("Please input contact name");
+                pb.Name = Console.ReadLine();
 
-                Console.WriteLine("Input phone number you'd like to add for this contact");
-                int addNumberToPhonebook = Console.Read();
+                Console.WriteLine("Please input contact number");
+                pb.Number = Console.Read();
 
             }
-            
+
+
         }
 
 
