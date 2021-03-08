@@ -33,11 +33,40 @@ namespace WorkBoyScuffedEdition
         static void Main(string[] args)
         {
             FunctionSelector();
+
+            
+
         }
 
         public static void AboutThisProgram()
         {
+            Console.WriteLine("This program emulates the functionality of a WorkBoy from Fabtek, Inc.\n\n" +
 
+                                "Originally conceptualised in Jan 1992, it was a project that never released due to\n" +
+                                "price cuts considered for the GameBoy by Nintendo.\n\n" +
+
+                                "I decided to make this project for two reasons\n" +
+
+                                "\t1) I thought it was a neat idea for the GameBoy, which would have given it another\n" +
+
+                                    "\t   edge aside from just, a gaming console\n" +
+
+                                "\t2) I wanted to get some more practice with programming.I've been learning C# and\n" +
+
+                                    "\t   thought this would be a good thing to get some experience with.\n\n" +
+
+                                "Thank you for downloading this project!  I hope it's charming enough to brighten your day!\n\n" +
+
+                                "As I get better with programming, I hope to add more functionality to it, and flesh it out\n" +
+                                "good and proper.\n\n" +
+
+                                "Stay cheeky, keep smiling <3\n\n" +
+
+                                "- Bradley Thomas, London UK\n\n");
+            Console.WriteLine("HIT SPACE AND ENTER TO CONTINUE");
+            string headHome = Console.ReadLine();
+
+            if (headHome.Equals(" ")) FunctionSelector();
         }
 
 
@@ -70,13 +99,14 @@ namespace WorkBoyScuffedEdition
 
             Console.Clear();
 
+
             if (workboyFunctionSelector.Equals("1"))
             {
                 ConversionSelector();
             }
             else if (workboyFunctionSelector.Equals("2"))
             {
-                AboutThisProgram();
+                FunctionSelector();
             }
             else if (workboyFunctionSelector.Equals("3"))
             {
@@ -87,6 +117,11 @@ namespace WorkBoyScuffedEdition
                 returnToHome = Console.ReadLine();
                 programEndSaver();
             }
+            else if (workboyFunctionSelector.Equals("4"))
+            {
+                AboutThisProgram();
+            }
+            
         }
 
         public static void programEndSaver()
