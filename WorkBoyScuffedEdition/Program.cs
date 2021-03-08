@@ -9,7 +9,7 @@ namespace WorkBoyScuffedEdition
         public static Distances dist = new Distances();
         public static Weights weight = new Weights();
         public static Volumes vol = new Volumes();
-        public static Phonebook pb;
+        public static Phonebook pb = new Phonebook();
 
         public static string returnToHome;
 
@@ -36,7 +36,7 @@ namespace WorkBoyScuffedEdition
         {
             FunctionSelector();
 
-            
+
 
         }
 
@@ -82,7 +82,7 @@ namespace WorkBoyScuffedEdition
                               "|--------------------------|\n" +
                               "|3) (COMING SOON)          |\n" +
                               "| -------------------------|\n" +
-                              "|4) (About This Program    |\n" + 
+                              "|4) (About This Program    |\n" +
                               "|--------------------------|\n" +
                               "\n\n\nPress Enter to Close");
             Author();
@@ -114,7 +114,7 @@ namespace WorkBoyScuffedEdition
             {
                 AboutThisProgram();
             }
-            
+
         }
 
         public static void programEndSaver()
@@ -130,7 +130,7 @@ namespace WorkBoyScuffedEdition
             }
         }
 
-        #region -----------------CONVERTOR CODE (LEADS TO CLASSES ---------------------------
+        #region -----------------CONVERTOR CODE (LEADS TO CLASSES) ---------------------------
         public static void ConversionSelector()
         {
             Console.WriteLine("What do you want to convert?\n" +
@@ -436,28 +436,45 @@ namespace WorkBoyScuffedEdition
 
         }
         #endregion
-        
+
+        #region -----------------PHONEBOOK CODE (LEADS TO CLASSES) ---------------------------
         public static void PhoneBook()
         {
             Console.WriteLine("What do you want to do?\n" +
                               "1) Access Phone Book\n" +
-                              "2) Add to Phone Book\n\n");
-            
-            int phoneBookNavigator = Console.Read();
+                              "2) Add to Phone Book\n" +
+                              "3) -Back to main menu-");
 
-            if (phoneBookNavigator == 2)
+            string phoneBookNavigator = Console.ReadLine();
+
+            if (phoneBookNavigator == "1")
             {
-                Console.WriteLine("Please input contact name");
-                pb.Name = Console.ReadLine();
-
-                Console.WriteLine("Please input contact number");
-                pb.Number = Console.Read();
+                Console.WriteLine(pb.phoneBookNames);
+            }
+            else if (phoneBookNavigator == "2")
+            {
+                AddPhoneNumber();
 
             }
-
-
         }
 
+        public static void AddPhoneNumber()
+        {
+            Console.WriteLine("Give me a name");
+            string givenName = Console.ReadLine();
+
+            Console.WriteLine("Give me a number");
+            long givenNumber = Console.Read();
+            Console.Clear();
+
+            pb.PhoneBookInsert(givenName, givenNumber);
+            //ADD NAME AND NUMBER TO TEXT FILE HIDDEN IN SOURCE FILES
+
+            Console.WriteLine("Number added!  Thank you!\n\n");
+            FunctionSelector();
+        }
+
+        #endregion
 
         public static void OpeningArt()
         {
