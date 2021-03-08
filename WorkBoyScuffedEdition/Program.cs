@@ -9,6 +9,8 @@ namespace WorkBoyScuffedEdition
         public static Weights weight = new Weights();
         public static Volumes vol = new Volumes();
 
+        public static string returnToHome;
+
         public static string currentConvertorType;
 
         public static bool running = true;
@@ -32,10 +34,16 @@ namespace WorkBoyScuffedEdition
         {
             FunctionSelector();
         }
-        
+
+        public static void AboutThisProgram()
+        {
+
+        }
+
+
         public static void Author()
         {
-            Console.WriteLine("\n\n\n\n\n\n\n\n\n(c) 2021 Bradley Stuart Thomas\n" +
+            Console.WriteLine("\n\n\n\n\n\n\n(c) 2021 Bradley Stuart Thomas\n" +
                               "Original Concept by Fabtek, Inc");
         }
 
@@ -48,19 +56,53 @@ namespace WorkBoyScuffedEdition
                               "|--------------------------|\n" +
                               "|1) Convert                |\n" +
                               "|--------------------------|\n" +
-                              "|2) (COMING SOON)          |\n" +
+                              "|2) TBC                    |\n" +
+                              "|--------------------------|\n" +
+                              "|3) (COMING SOON)          |\n" +
+                              "| -------------------------|\n" +
+                              "|4) (About This Program    |\n" + 
                               "|--------------------------|\n" +
                               "\n\n\nPress Enter to Close");
             Author();
+            Console.WriteLine("------------------------------------------------");
+            Console.Write("> ");
             workboyFunctionSelector = Console.ReadLine();
+
             Console.Clear();
 
             if (workboyFunctionSelector.Equals("1"))
             {
                 ConversionSelector();
             }
+            else if (workboyFunctionSelector.Equals("2"))
+            {
+                AboutThisProgram();
+            }
+            else if (workboyFunctionSelector.Equals("3"))
+            {
+                Console.WriteLine("-:-:-:-:-:-:-:-:-:-:-:-:-:-:-:-:-:-:-:-:-:-:-:-:-");
+                Console.WriteLine("This list is still being built, come back later and there might be something else here!");
+                Console.WriteLine("\nPRESS SPACE AND ENTER TO PROGRESS TO HOME SCREEN");
+                Console.WriteLine("-:-:-:-:-:-:-:-:-:-:-:-:-:-:-:-:-:-:-:-:-:-:-:-:-");
+                returnToHome = Console.ReadLine();
+                programEndSaver();
+            }
         }
 
+        public static void programEndSaver()
+        {
+            if (returnToHome.Equals(" "))
+            {
+                FunctionSelector();
+            }
+            else
+            {
+                Console.WriteLine("Closing program now.\nPlease hit Enter.");
+                Console.ReadKey();
+            }
+        }
+
+        #region -----------------CONVERTOR CODE (LEADS TO CLASSES ---------------------------
         public static void ConversionSelector()
         {
             Console.WriteLine("What do you want to convert?\n" +
@@ -365,6 +407,9 @@ namespace WorkBoyScuffedEdition
             } while (VolumeRunAgain.Equals(true));
 
         }
+        #endregion
+        
+        
         public static void OpeningArt()
         {
             Console.WriteLine("     ╔═╗     ╔═╗   ╔═══════╗  ╔═══════╗   ╔═╗  ╔══╗  ╔═══════╗  ╔═══════╗   ╔═╗ ╔═╗\n" +
