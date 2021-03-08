@@ -53,7 +53,7 @@ namespace WorkBoyScuffedEdition
                                 "As I get better with programming, I hope to add more functionality to it, and flesh it out\n" +
                                 "good and proper.\n\n" +
                                 "Stay cheeky, keep smiling <3\n\n" +
-                                "- Bradley Thomas, London UK, 2021\n\n");
+                                "- Bradley Thomas, London UK, Mar 2021\n\n");
             Console.WriteLine("HIT SPACE AND ENTER TO CONTINUE");
             string headHome = Console.ReadLine();
 
